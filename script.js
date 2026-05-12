@@ -1,46 +1,45 @@
+```
+const displayElement = document.getElementById("display");
+
 function appendToDisplay(value) {
-    document.getElementById("display").value += value;
+    displayElement.value += value;
 }
 
 function clearDisplay() {
-    document.getElementById("display").value = "";
+    displayElement.value = "";
 }
 
 function deleteLast() {
-    let display = document.getElementById("display");
-    display.value = display.value.slice(0, -1);
+    displayElement.value = displayElement.value.slice(0, -1);
 }
 
 function calculate() {
-    let display = document.getElementById("display");
     try {
-        display.value = eval(display.value);
+        displayElement.value = eval(displayElement.value);
     } catch (e) {
-        display.value = "Error";
+        displayElement.value = "Error";
     }
 }
 
 function calculateSquareRoot() {
-    let display = document.getElementById("display");
-    let value = parseFloat(display.value);
+    const value = parseFloat(displayElement.value);
     if (!isNaN(value)) {
-        display.value = Math.sqrt(value);
+        displayElement.value = Math.sqrt(value);
     } else {
-        display.value = "Error";
+        displayElement.value = "Error";
     }
 }
 
 function calculatePercentage() {
-    let display = document.getElementById("display");
-    let value = parseFloat(display.value);
+    const value = parseFloat(displayElement.value);
     if (!isNaN(value)) {
-        display.value = value / 100;
+        displayElement.value = value / 100;
     } else {
-        display.value = "Error";
+        displayElement.value = "Error";
     }
 }
 
 function appendPower() {
-    let display = document.getElementById("display");
-    display.value += "**"; 
+    displayElement.value += "**"; 
 }
+```
